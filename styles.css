@@ -46,3 +46,14 @@ header img {
 body h1 {
     color: #353a35;
 }
+body p {
+    color: #353a35;
+    float: right;
+}
+body h3 {
+    color: #353a35;
+    float: right;
+}
+body{
+    background-color: #d7ffda;
+}
