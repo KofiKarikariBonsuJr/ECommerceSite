@@ -52,14 +52,43 @@ body h1 {
 #demo h3 {
     color: #353a35;
 }
-#demo img{
-    float: left;
-    border: 4px #003204;
-}
 #carpic{
     float: left;
     border: 4px #003204;
 }
 body{
     background-color: #d7ffda;
+}
+body img{
+    border: 4px #003204;
+}
+#nav_menu2 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#nav_menu2 ul li {
+	float: right;
+}
+#nav_menu2 ul li a {
+    display: block;
+    width: 200px;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #83c287;
+    color: white;
+}
+#nav_menu2 a.current {
+	color: rgb(63, 78, 66);
+}
+#nav_menu2 ul li a:hover{
+	display: block;
+    text-decoration: underline;
+}
+#nav_menu2 ul li p{
+	display: block;
+    text-decoration: underline;
+    float: right;
 }
