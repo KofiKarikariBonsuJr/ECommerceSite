@@ -21,7 +21,7 @@
 	color: rgb(63, 78, 66);
 }
 
-#nav_menu ul li:hover{
+#nav_menu ul li a:hover{
 	display: block;
     background-color: #446947;
 }
@@ -30,6 +30,6 @@
     clear: both;
     display: block;
 }
-#header {
+header {
 background-color: #83c287;
 }
