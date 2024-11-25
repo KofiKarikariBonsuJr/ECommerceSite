@@ -33,6 +33,9 @@
     clear: both;
     display: block;
 }
+nav img {
+    float: left;
+}
 header {
 background-color: #83c287;
 }
