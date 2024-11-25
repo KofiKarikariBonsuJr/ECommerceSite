@@ -91,4 +91,8 @@ body img{
 	display: block;
     text-decoration: underline;
     float: right;
+    color: white;
+}
+#nav_menu2 ul li img {
+	float: right;
 }
