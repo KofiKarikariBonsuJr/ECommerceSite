@@ -5,34 +5,36 @@
 	position: relative;
 }
 #nav_menu ul li {
-	float: left;
+	float: right;
 }
 #nav_menu ul li a {
     display: block;
-    width: 160px;
+    width: 80px;
     text-align: center;
     padding: 1em 0;
     text-decoration: none;
-    background-color: #800000;
+    background-color: #83c287;
     color: white;
     font-weight: bold;
 }
 #nav_menu a.current {
-	color: yellow;
+	color: rgb(63, 78, 66);
 }
 #nav_menu ul ul {
     display: none;
     position: absolute;
     top: 100%;
 }
-#nav_menu ul ul li {
-	float: none;
-}
+
 #nav_menu ul li:hover > ul {
 	display: block;
+    background-color: #446947;
 }
 #nav_menu > ul::after {
     content: "";
     clear: both;
     display: block;
+}
+#header {
+background-color: #83c287;
 }
