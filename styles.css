@@ -32,5 +32,8 @@
 }
 header {
 background-color: #83c287;
-
+}
+header img {
+	float: left;
+	padding: 0 30px;
 }
