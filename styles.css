@@ -46,13 +46,15 @@ header img {
 body h1 {
     color: #353a35;
 }
-body p {
+#demo p {
     color: #353a35;
-    float: right;
 }
-body h3 {
+#demo h3 {
     color: #353a35;
-    float: right;
+}
+#demo img{
+    float: left;
+    border: 4px #003204;
 }
 body{
     background-color: #d7ffda;
