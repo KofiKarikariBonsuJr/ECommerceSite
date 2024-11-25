@@ -7,6 +7,9 @@
 #nav_menu ul li {
 	float: right;
 }
+#nav_menu ul li img {
+	float: left;
+}
 #nav_menu ul li a {
     display: block;
     width: 100px;
@@ -36,4 +39,7 @@ background-color: #83c287;
 header img {
 	float: left;
 	padding: 0 30px;
+}
+body h1 {
+    color: #353a35;
 }
