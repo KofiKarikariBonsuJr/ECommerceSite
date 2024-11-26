@@ -33,7 +33,7 @@
     clear: both;
     display: block;
 }
-nav img {
+#nav_menu img {
     float: left;
 }
 header {
