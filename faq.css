@@ -1,0 +1,105 @@
+#nav_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#nav_menu ul li {
+	float: right;
+}
+#nav_menu ul li img {
+	float: left;
+}
+#nav_menu ul li a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #83c287;
+    color: white;
+    font-weight: bold;
+}
+#nav_menu a.current {
+	color: rgb(63, 78, 66);
+}
+
+#nav_menu ul li a:hover{
+	display: block;
+    background-color: #446947;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#nav_menu img {
+    float: left;
+}
+header {
+background-color: #83c287;
+}
+header img {
+	float: left;
+	padding: 0 30px;
+}
+body h1 {
+    color: #353a35;
+}
+#demo p {
+    color: #353a35;
+}
+#demo h3 {
+    color: #353a35;
+}
+#carpic{
+    float: left;
+    border: 4px #003204;
+}
+body{
+    background-color: #d7ffda;
+}
+body img{
+    border: 4px #003204;
+}
+
+#nav_menu2 ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#nav_menu2 ul li {
+	float: left;
+}
+#nav_menu2 ul li a {
+    display: block;
+    width: 200px;
+    text-align: center;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: #83c287;
+    color: white;
+}
+#nav_menu2 a.current {
+	color: rgb(63, 78, 66);
+}
+#nav_menu2 ul li a:hover{
+	display: block;
+    text-decoration: underline;
+}
+#nav_menu2 ul p{
+	display: block;
+    text-decoration: underline;
+    float: right;
+    color: white;
+}
+#nav_menu2 ul li img {
+	float: right;
+}
+footer{
+    background-color: #83c287;
+}
+#Question{
+    color:#003204
+}
