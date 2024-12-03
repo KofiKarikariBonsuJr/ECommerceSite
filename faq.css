@@ -101,5 +101,6 @@ footer{
     background-color: #83c287;
 }
 #Question{
-    color:#003204
+    color:#003204;
+    font-weight: bold;
 }
