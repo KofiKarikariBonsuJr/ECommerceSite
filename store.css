@@ -62,6 +62,11 @@ body{
 body img{
     border: 4px #003204;
 }
+
+#product-img{
+    float: left;
+}
+
 #nav_menu2 ul {
 	list-style-type: none;
 	margin: 0;
