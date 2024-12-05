@@ -29,26 +29,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   
-    <h1>Terms of Service</h1>
+    <form id="paymentForm">
+      <h2>Enter Payment Information</h2>
 
-    <div class="card text-white bg-warning mb-3 w-100" style="max-width: 18rem;">
-      <div class="card-body">
-        <p class="card-text">Remember; Lawnmowers come with sharp blade. Operate responsibly!</p>
-      </div>
-      </div>
+      <label for="nameOnCard">Name on Card</label>
+      <input type="text" id="nameOnCard" name="nameOnCard" placeholder="John Doe" required>
 
-    <form id="termsForm">
-      <h2>Terms Agreement</h2>
-      <p>Please check the boxes below to proceed:</p>
-      <label>
-          <input type="checkbox" id="ageCheck" name="age" required>
-          I am over the age of 18.
-      </label> <br> <br>
-      <label>
-          <input type="checkbox" id="liabilityCheck" name="liability" required>
-          I am liable if I use the products sold on this site to harm myself or others.
-      </label> <br> <br>
-      <button type="submit">Submit</button>
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9101 1121" pattern="\d{16}" maxlength="16" required>
+
+      <label for="expirationDate">Expiration Date</label>
+      <select id="expMonth" name="expMonth" required>
+          <option value="" disabled selected>Month</option>
+          <option value="01">01 - January</option>
+          <option value="02">02 - February</option>
+          <option value="03">03 - March</option>
+          <option value="04">04 - April</option>
+          <option value="05">05 - May</option>
+          <option value="06">06 - June</option>
+          <option value="07">07 - July</option>
+          <option value="08">08 - August</option>
+          <option value="09">09 - September</option>
+          <option value="10">10 - October</option>
+          <option value="11">11 - November</option>
+          <option value="12">12 - December</option>
+      </select>
+      <input type="number" id="expYear" name="expYear" placeholder="Year (e.g., 2024)" min="2023" max="2100" required>
+
+      <label for="cvv">CVV</label>
+      <input type="number" id="cvv" name="cvv" placeholder="123" pattern="\d{3}" maxlength="3" required>
+
+      <label for="email">Billing Email</label>
+      <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+
+      <button type="submit">Submit Payment</button>
   </form>
   </body>
   <footer>
