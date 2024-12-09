@@ -38,7 +38,10 @@
       <div class="card-body">
         <h5 class="card-title">Installation</h5>
         <p class="card-text">Take the hassle out of setup with our professional installation services! Our expert team ensures your automatic lawn care products are installed and configured perfectly, so you can enjoy effortless performance right from the start. Sit back, relax, and let us handle the hard work for you!</p>
-        <a href="purchase.html" class="btn btn-primary">Purchase</a>
+        <a href="#" class="btn btn-primary add-to-cart" 
+              data-id="10" 
+              data-name="Installation" 
+              data-price="49.99">Purchase</a>
       </div>
     </div>
     </div>
@@ -48,7 +51,10 @@
       <div class="card-body">
         <h5 class="card-title">Repairs</h5>
         <p class="card-text">Keep your lawn care tools in top shape with our reliable repair services! Whether it’s an automatic lawnmower, rake, or combo device, our skilled technicians are here to diagnose and fix any issues quickly. Enjoy peace of mind knowing your equipment is in expert hands.</p>
-        <a href="purchase.html" class="btn btn-primary">Purchase</a>
+        <a href="#" class="btn btn-primary add-to-cart" 
+        data-id="11" 
+        data-name="Repair" 
+        data-price="49.99">Purchase</a>
       </div>
     </div>
     </div>
@@ -58,7 +64,10 @@
       <div class="card-body">
         <h5 class="card-title">Maintenance</h5>
         <p class="card-text">Ensure your lawn care equipment runs smoothly year-round with our Monthly Maintenance Subscription! Each month, a skilled technician will visit to inspect, tune up, and address any potential issues before they become problems. Enjoy worry-free performance and extend the life of your devices with this convenient service.</p>
-        <a href="purchase.html" class="btn btn-primary">Purchase</a>
+        <a href="#" class="btn btn-primary add-to-cart" 
+        data-id="12" 
+        data-name="Maintenance" 
+        data-price="9.99">Purchase</a>
       </div>
       </div>
       </div>
@@ -68,11 +77,84 @@
           <div class="card-body">
             <h5 class="card-title">Upgrades</h5>
             <p class="card-text">Upgrade your lawn care experience with our professional upgrading services! Whether you’re looking to add new features, enhance performance, or upgrade to the latest model, our team is here to help. Stay ahead with cutting-edge technology and maximize the potential of your equipment.</p>
-            <a href="purchase.html" class="btn btn-primary">Purchase</a>
-          </div>
+            <a href="#" class="btn btn-primary add-to-cart" 
+            data-id="13" 
+            data-name="Upgrade" 
+            data-price="99.99">Purchase</a>
           </div>
           </div>
     </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+      function updateCart() {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log(cart); // Debugging: Display the cart in the console
+      }
+    
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+          const id = button.getAttribute('data-id');
+          const name = button.getAttribute('data-name');
+          const price = parseFloat(button.getAttribute('data-price'));
+    
+          // Check if item is already in the cart
+          const existingItem = cart.find(item => item.id === id);
+          if (existingItem) {
+            existingItem.quantity += 1; // Increase quantity
+          } else {
+            cart.push({ id, name, price, quantity: 1 });
+          }
+    
+          updateCart();
+          alert(`${name} has been added to your cart!`);
+        });
+      });
+    </script>
+  
+  <button class="btn btn-success" id="view-cart">View Cart</button>
+  <div id="cart-modal" style="display: none;">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+  </div>
+  
+  <script>
+    document.getElementById('view-cart').addEventListener('click', () => {
+      const cartModal = document.getElementById('cart-modal');
+      const cartItems = document.getElementById('cart-items');
+      cartModal.style.display = 'block';
+  
+      cartItems.innerHTML = '';
+      cart.forEach(item => {
+        cartItems.innerHTML += `<li>${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}</li>`;
+      });
+    });
+  </script>
+
+<button class="btn btn-warning" id="go-to-purchase">Proceed to Checkout</button>
+
+<script>
+document.getElementById('go-to-purchase').addEventListener('click', () => {
+  // Optional: Save the cart to localStorage before navigating
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  // Redirect to purchase.html
+  window.location.href = 'purchase.html';
+});
+</script>
+
+<script>
+document.getElementById('go-to-purchase').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Your cart is empty! Please add some products before proceeding.');
+  } else {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = 'purchase.html';
+  }
+});
+</script>
+
   </body>
   <footer>
     <nav id="nav_menu2">

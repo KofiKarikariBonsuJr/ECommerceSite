@@ -64,6 +64,29 @@
       <br>
       <button type="submit">Submit Payment</button>
   </form>
+
+  <script>
+    document.getElementById('paymentForm').addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent the form from refreshing the page
+  
+      // Clear the cart from localStorage
+      localStorage.removeItem('cart');
+  
+      // Reset the cart array (if defined in your JavaScript)
+      cart = [];
+  
+      // Optional: Provide feedback to the user
+      alert('Your cart has been cleared!');
+  
+      // Optional: Update the UI to reflect the cleared cart
+      const cartItems = document.getElementById('cart-items');
+      if (cartItems) cartItems.innerHTML = ''; // Clear any displayed cart items
+  
+      const totalPrice = document.getElementById('total-price');
+      if (totalPrice) totalPrice.innerText = 'Total: $0.00';
+    });
+  </script>
+
   <img src="Emptypng.png" alt="" height="256">
   </body>
   <footer>
