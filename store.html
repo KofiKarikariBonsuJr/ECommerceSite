@@ -56,7 +56,10 @@
               <img id="product-img" src="StandardMower.png" alt="The Standard Automatic Mower" height="256">
               <h5 class="card-title">The Standard Automatic Mower</h5>
               <p class="card-text">Effortless lawn care is here with our advanced automatic lawnmower! Designed for precision, convenience, and eco-friendly performance, it takes the work out of maintaining a perfectly trimmed yard. With smart navigation and customizable schedules, you can enjoy lush, neatly cut grass without lifting a finger. Upgrade your lawn care today!</p>
-              <a href="purchase.html" class="btn btn-primary">Purchase</a>
+              <a href="purchase.html" class="btn btn-primary add-to-cart" 
+              data-id="1" 
+              data-name="Super Automatic Lawnmower" 
+              data-price="399.99">Purchase</a>
             </div>
           </div>
           <!--Lite-->
@@ -221,12 +224,51 @@
         </div> 
       </div>
       <script>
-        $(function () {
-          $('#myTab').tab('show')
-        })
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      
+        function updateCart() {
+          localStorage.setItem('cart', JSON.stringify(cart));
+          console.log(cart); // Debugging: Display the cart in the console
+        }
+      
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+          button.addEventListener('click', () => {
+            const id = button.getAttribute('data-id');
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+      
+            // Check if item is already in the cart
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+              existingItem.quantity += 1; // Increase quantity
+            } else {
+              cart.push({ id, name, price, quantity: 1 });
+            }
+      
+            updateCart();
+            alert(`${name} has been added to your cart!`);
+          });
+        });
       </script>
     
-  
+    <button class="btn btn-success" id="view-cart">View Cart</button>
+    <div id="cart-modal" style="display: none;">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+    </div>
+    
+    <script>
+      document.getElementById('view-cart').addEventListener('click', () => {
+        const cartModal = document.getElementById('cart-modal');
+        const cartItems = document.getElementById('cart-items');
+        cartModal.style.display = 'block';
+    
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+          cartItems.innerHTML += `<li>${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}</li>`;
+        });
+      });
+    </script>
 
   </body>
   <footer>
